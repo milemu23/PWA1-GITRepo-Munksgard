@@ -26,6 +26,7 @@ var round = 0;
     
 //create a function to execute the code for the fight
 function fight(){
+    //print to console log
     console.log("in the fight function");
     
     //alert to begin game with full health for each player
@@ -65,6 +66,7 @@ function fight(){
             round++;
             alert(playerOneName+":"+playerOneHealth+" *ROUND "+round+" OVER* "+playerTwoName+":"+playerTwoHealth);
         }else{
+            //make alert with results
             alert(results);
             //will break out of loop
             break;
@@ -74,6 +76,7 @@ function fight(){
 
 //Create a function to check for a winner
 function winnerCheck(){
+    //print in console log to confirm function is working
     console.log("in winnerCheck FN");
     
     //set variable to no winner at first
