@@ -98,6 +98,7 @@
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
 	var noMatch = function(){
         //execute no match found if function is called
+        //uses html and displays paragraph
 		var html = ''+
 			'<p>No Results found.</p>'+
 			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>'
