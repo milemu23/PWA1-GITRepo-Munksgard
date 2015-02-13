@@ -10,8 +10,8 @@
     console.log("FIGHT!!!");
                 
 //Give Players name using variable
-var playerOneName = "Spiderman";
-var playerTwoName = "Batman";
+var playerOneName = "Donatello";
+var playerTwoName = "Leonardo";
 
 //Set player damage
 var player1Damage = 20;
