@@ -5,7 +5,7 @@
 // Create privatized scope using a self-executing function
 //encapsulated to keep control of variables
 (function(){
-	
+    
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
     //Get the element with the id="results" and store it in resultsDIV
 	var resultsDIV = document.getElementById("results"),
@@ -18,12 +18,12 @@
 	// Validates search query
     //declares validqte as a variable and assigns it to the function query
     //fixed error: changed to one equals to declare variable
-    ////fixed error: corrected spelling
-	var validate = function(query){
-		console.log("Right before while loop");
+    ////error: need to fix spelling
+	var validqte = function(query){
 		// Trim whitespace from start and end of search query
         //while the character at index 0 is blank
-		while(query.charAt(0) = " "){
+        //fixed error: replace single equals with double to compare
+		while(query.charAt(0) == " "){
             //the query extracts the length of query word starting with index 1
             query = query.substring(1, query.length);
 		};
@@ -91,6 +91,7 @@
 		
 		// Check that matches were found, and run output functions
         //if the result's length is empty
+        //error: needs to be double equals to compare
 		if(results.length = 0){
             //call no match
 			noMatch();
@@ -144,8 +145,8 @@
 	document.forms[0].onsubmit = function(){
 		var query = searchInput.value;
         //call validqte with query results
-        //fixed error: corrected spelling
-		validate(query);
+        //error: need to correct spelling
+		validqte(query);
 
         // return false is needed for most events - this will be reviewed in upcoming course material
         // THE LINE DIRECTLY BELOW IS CORRECT

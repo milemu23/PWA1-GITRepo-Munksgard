@@ -16,25 +16,25 @@
 	
 	// Validates search query
     //declares validqte as a variable and assigns it to the function query
-	var validqte == function(query){
+	var validqte = function(query){
 		
 		// Trim whitespace from start and end of search query
         //while the character at index 0 is blank
-		while(query.charAt(0) = " "){
+		while(query.charAt(0) == " "){
             //the query extracts the length of query word starting with index 1
 			query = query.substring(1, query.length);
 		};
         //while the last character is exactly equal to ""
-		while(query.charAt(query.length-1) === ""){
-            //the query extracts the query word at index 0 and the length of the word minus 1
-			query = query.substring(0, query.length-1);
-		;
+		while(query.charAt(query.length-1) === "") {
+			//the query extracts the query word at index 0 and the length of the word minus 1
+			query = query.substring(0, query.length - 1);
+		};
 		
 		// Check search length, must have 3 characters
         //if the word length is less than 3 characters
 		if(query.length < 3){
             //alert the user that the search query is too small and to try again
-			alert("Your search query is too small, try again.);
+			alert("Your search query is too small, try again.");
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
             //call search input, give focus to <a> element
@@ -49,7 +49,7 @@
 	
 	// Finds search matches
     //declares function as a variable of search
-	var search = function(query)
+	var search = function(query){
 		
 		// split the user's search query string into an array
         //joins search results into an array and declares them as variable queryArray
@@ -60,27 +60,29 @@
 
 		// loop through each index of db array
         //for each i(query search) keep checking until the length of the words in the database are greater than i
-		for(var i=0, j=db.length; i<j; i++){
-		
+		for(var i=0, j=db.length; i<j; i++) {
+
 			// each db[i] is a single video item, each title ends with a pipe "|"
 			// save a lowercase variable of the video title
 			var dbTitleEnd = db[i].indexOf('|');
 			var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);
-			
+
 			// loop through the user's search query words
 			// save a lowercase variable of the search keyword
-			for(var ii=0, jj=queryArray.length; ii<jj; ii++){
+			for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {
 				var qitem = queryArray[ii].tolowercase();
-				
+
 				// is the keyword anywhere in the video title?
 				// If a match is found, push full db[i] into results array
 				var compare = dbitem.indexOf(qitem);
-				if(compare !== -1){
-                    //push the results of the database
+				if (compare !== -1) {
+					//push the results of the database
 					results.push(db[i]);
-				};
+				}
+				;
+			}
 			;
-		;
+		};
 		//call results and sort the elements of the array
 		results.sort();
 		
@@ -136,14 +138,14 @@
 	
 	// The onsubmit event will be reviewed in upcoming Course Material.
 	// THE LINE DIRECTLY BELOW IS CORRECT
-	document.forms[0].onsubmit = function(){
+	document.forms[0].onsubmit = function() {
 		var query = searchInput.value;
-        //call validqte with query results
+		//call validqte with query results
 		validqte(query);
 
-        // return false is needed for most events - this will be reviewed in upcoming course material
-        // THE LINE DIRECTLY BELOW IS CORRECT
+		// return false is needed for most events - this will be reviewed in upcoming course material
+		// THE LINE DIRECTLY BELOW IS CORRECT
 		return false;
-	;
+	};
 
 })();
