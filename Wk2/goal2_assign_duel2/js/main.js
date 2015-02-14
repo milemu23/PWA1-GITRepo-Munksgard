@@ -8,7 +8,13 @@
     
     //writes FIGHT out in console
     console.log("FIGHT!!!");
-                
+
+//created an array combining all player info
+var playerOne = ["Donatello", 20, 100];
+var playerTwo = ["Leonardo", 20, 100];
+
+//Info commented out -- combined info in an Array
+/*
 //Give Players name using variable
 var playerOneName = "Donatello";
 var playerTwoName = "Leonardo";
@@ -20,7 +26,8 @@ var player2Damage = 20;
 //Set player health, 100 is full health
 var playerOneHealth = 100;
 var playerTwoHealth = 100;
-
+*/
+    
 //Declare variable to keep track of fighting rounds
 var round = 0;
     
@@ -30,30 +37,30 @@ function fight(){
     console.log("in the fight function");
     
     //alert to begin game with full health for each player
-    alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);
+    alert(playerOne[0]+":"+playerOne[2]+" *START* "+playerTwo[0]+":"+playerTwo[2]);
     
     //if i is less than 10(rounds), then execute, i++ increments by 1
     for (var i=0; i<10; i++){
         
         //set minimum damange
-        var minDamage1 = player1Damage * .5;
-        var minDamage2 = player2Damage * .5;
+        var minDamage1 = playerOne[1] * .5;
+        var minDamage2 = playerTwo[1] * .5;
         //generate a random number to determine damage in fight
-        var f1 = Math.floor(Math.random() * (player1Damage-minDamage1) + minDamage1);
-        var f2 = Math.floor(Math.random() * (player2Damage-minDamage2) + minDamage2);
+        var f1 = Math.floor(Math.random() * (playerOne[1]-minDamage1) + minDamage1);
+        var f2 = Math.floor(Math.random() * (playerTwo[1]-minDamage2) + minDamage2);
         //check to make sure numbers are working
         //console.log(f1);
         //console.log(f2);
         
         //inflict damage - minus number from damage
-        playerOneHealth-=f1;
-        playerTwoHealth-=f2;
+        playerOne[2]-=f1;
+        playerTwo[2]-=f2;
         //check health is subtracting
         //console.log(playerOneHealth);
         //console.log(playerTwoHealth);
         
         //confirm names match with damage
-        console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);
+        console.log(playerOne[0]+":"+playerOne[2]+" "+playerTwo[0]+":"+playerTwo[2]);
         
         //check to see if there is a winner - runs winnerCheck function
         var results = winnerCheck();
@@ -64,7 +71,7 @@ function fight(){
         if(results === "no winner"){
             //adds one to round
             round++;
-            alert(playerOneName+":"+playerOneHealth+" *ROUND "+round+" OVER* "+playerTwoName+":"+playerTwoHealth);
+            alert(playerOne[0]+":"+playerOne[2]+" *ROUND "+round+" OVER* "+playerTwo[0]+":"+playerTwo[2]);
         }else{
             //make alert with results
             alert(results);
@@ -82,14 +89,14 @@ function winnerCheck(){
     //set variable to no winner at first
     var results = "no winner";
     //if player one's health is less than 1 and player two's health is less than one, both have died
-    if(playerOneHealth<1 && playerTwoHealth<1){
+    if(playerOne[2]<1 && playerTwo[2]<1){
         results = "You Both Die";
     //else if player one's health is less than one, player two wins
-    }else if(playerOneHealth<1){
+    }else if(playerOne[0]<1){
         results =playerTwoName+" WINS!!!"
     //else if player's two health is less than one, player one wins
-    }else if(playerTwoHealth<1){
-        results =playerOneName+" WINS!!!"
+    }else if(playerTwo[2]<1){
+        results =playerOne[0]+" WINS!!!"
     };
     //return information(result) back to winnerCheck
     return results;
