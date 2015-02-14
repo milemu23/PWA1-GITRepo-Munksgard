@@ -1,8 +1,9 @@
 //Michelle Munksgard
-//Feburary 8, 2015
-//Buggy Search
+//Feburary 14, 2015
+//Buggy Search v2
 
 // Create privatized scope using a self-executing function
+//encapsulated to keep control of variables
 (function(){
 	
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
@@ -16,25 +17,28 @@
 	
 	// Validates search query
     //declares validqte as a variable and assigns it to the function query
-	var validqte == function(query){
-		
+    //fixed error: changed to one equals to declare variable
+    ////fixed error: corrected spelling
+	var validate = function(query){
+		console.log("Right before while loop");
 		// Trim whitespace from start and end of search query
         //while the character at index 0 is blank
 		while(query.charAt(0) = " "){
             //the query extracts the length of query word starting with index 1
-			query = query.substring(1, query.length);
+            query = query.substring(1, query.length);
 		};
         //while the last character is exactly equal to ""
 		while(query.charAt(query.length-1) === ""){
             //the query extracts the query word at index 0 and the length of the word minus 1
 			query = query.substring(0, query.length-1);
-		;
+        }; //fixed error: added closing brace
 		
 		// Check search length, must have 3 characters
         //if the word length is less than 3 characters
 		if(query.length < 3){
             //alert the user that the search query is too small and to try again
-			alert("Your search query is too small, try again.);
+            //fixed error: added missing quotation
+			alert("Your search query is too small, try again.");
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
             //call search input, give focus to <a> element
@@ -49,7 +53,8 @@
 	
 	// Finds search matches
     //declares function as a variable of search
-	var search = function(query)
+    //fixed error: added missing curly brace
+	var search = function(query){
 		
 		// split the user's search query string into an array
         //joins search results into an array and declares them as variable queryArray
@@ -79,8 +84,8 @@
                     //push the results of the database
 					results.push(db[i]);
 				};
-			;
-		;
+            }; //fixed error: added closing brace
+        }; //fixed error: added closing brace
 		//call results and sort the elements of the array
 		results.sort();
 		
@@ -114,7 +119,7 @@
 		var html = '<p>Results</p>', 
 			title, 
 			url
-		;
+        ; 
 		
 		// loop through all the results search() function
 		for(var i=0, j=results.length; i<j; i++){
@@ -139,11 +144,12 @@
 	document.forms[0].onsubmit = function(){
 		var query = searchInput.value;
         //call validqte with query results
-		validqte(query);
+        //fixed error: corrected spelling
+		validate(query);
 
         // return false is needed for most events - this will be reviewed in upcoming course material
         // THE LINE DIRECTLY BELOW IS CORRECT
 		return false;
-	;
+    }; //fixed error: added closing brace
 
 })();
