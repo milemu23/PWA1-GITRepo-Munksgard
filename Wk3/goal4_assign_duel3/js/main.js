@@ -30,13 +30,13 @@
         //first player
         {
             name:"Donatello", //index 0 with object-key name Donatello
-            damage:20; //index 0 with damage
+            damage:20, //index 0 with damage
             health:100 //index 0 with health
         },
         //second player
         {
             name:"Leonardo", //index 1 with object-key name Donatello
-            damage:20; //index 1 with damage
+            damage:20, //index 1 with damage
             health:100 //index 1 with health
         }];
     
@@ -91,8 +91,8 @@
         //generate a random number to determine damage in fight
         //changed each variables to use the new Array items
         //determine damage - change code to use the array of objects
-        var f1 = Math.floor(Math.random() * fighters[0].damage + fighters[0].damage * .5;
-        var f2 = Math.floor(Math.random() * fighters[1].damage + fighters[1].damage * .5;
+        var f1 = Math.floor(Math.random() * fighters[0].damage + fighters[0].damage * .5);
+        var f2 = Math.floor(Math.random() * fighters[1].damage + fighters[1].damage * .5);
         
         //check to make sure numbers are working
         //console.log(f1);
@@ -166,11 +166,11 @@ function winnerCheck(){
         //changed each variables to use the new Array items
         //update code to use array of objects for players
     }else if(fighters[0].health <1){
-        results = fighter[1].name + " WINS!!!"
+        results = fighters[1].name + " WINS!!!"
     //else if player's two health is less than one, player one wins
         //changed each variables to use the new Array items
-    }else if(fighter[1].health <1){
-        results =fighter[0].name + " WINS!!!"
+    }else if(fighters[1].health <1){
+        results =fighters[0].name + " WINS!!!"
     };
     //return information(result) back to winnerCheck
     return results;
