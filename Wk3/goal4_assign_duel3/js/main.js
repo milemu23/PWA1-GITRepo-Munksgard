@@ -1,6 +1,6 @@
 //Name: Michelle Munksgard
-//Date: February 13, 2015
-//Assignment: Analyze Duel #2
+//Date: February 20, 2015
+//Assignment: Analyze Duel #3
 
 
 //Create a self-executing function
