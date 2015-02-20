@@ -6,8 +6,20 @@
 //Create a self-executing function
 (function(){
     
-    //writes FIGHT out in console
+    //prints FIGHT out in console
     console.log("FIGHT!!!");
+    
+    //define DOM pieces
+    //declares fight1_txt variable and finds the paragraph element in the div with id #don 
+    var fight1_txt = document.querySelector("#don").querySelector("p");
+    //declares fight1_txt variable and finds the paragraph element in the div with id #leo
+    var fight2_txt = document.querySelector("#leo").querySelector("p");
+    //declares the round_text variable and pulls in text between the h2 tag
+    var round_text = document.getElementById("h2");
+    //declares button variable and finds elements with id tag fight_button
+    var button = document.getElementById("fight_btn");
+    
+    console.log();
 
 //created an array combining all player info
 var playerOne = ["Donatello", 20, 100];
