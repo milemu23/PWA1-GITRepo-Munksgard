@@ -164,12 +164,13 @@ function winnerCheck(){
         results = "You Both Die - GAME OVER!";
     //else if player one's health is less than one, player two wins
         //changed each variables to use the new Array items
-    }else if(playerOne[0]<1){
-        results =playerTwoName+" WINS!!!"
+        //update code to use array of objects for players
+    }else if(fighters[0].health <1){
+        results = fighter[1].name + " WINS!!!"
     //else if player's two health is less than one, player one wins
         //changed each variables to use the new Array items
-    }else if(playerTwo[2]<1){
-        results =playerOne[0]+" WINS!!!"
+    }else if(fighter[1].health <1){
+        results =fighter[0].name + " WINS!!!"
     };
     //return information(result) back to winnerCheck
     return results;
@@ -177,6 +178,6 @@ function winnerCheck(){
 
 //program starts
 console.log("program starts");
-fight();
+//fight();
 
 })();
