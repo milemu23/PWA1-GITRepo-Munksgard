@@ -15,7 +15,7 @@
     //declares fight1_txt variable and finds the paragraph element in the div with id #leo
     var fighter2_txt = document.querySelector("#leo").querySelector("p");
     //declares the round_text variable and pulls in text between the h2 tag
-    var round_txt = document.getElementById("h2");
+    var round_txt = document.querySelector("h2");
     //declares button variable and finds elements with id tag fight_button
     var button = document.getElementById("fight_btn");
     
@@ -80,7 +80,7 @@
     fighter2_txt.innerHTML = fighters[1].name + ":   " + fighters[1].health;
         
     //if i is less than 10(rounds), then execute, i++ increments by 1
-    for (var i=0; i<10; i++){
+    // for (var i=0; i<10; i++){
         
         //set minimum damange
         //changed each variables to use the new Array items
@@ -101,8 +101,8 @@
         //inflict damage - minus number from damage
         //changed each variables to use the new Array items
         //update code to reflect array of objects
-        fighters[0].health-=f1;
-        fighters[1].health-=f2;
+        fighters[0].health -= f1;
+        fighters[1].health -= f2;
         
         
         //check health is subtracting
@@ -131,7 +131,7 @@
             //comment out alert and use innerHTML and array of objects to display name and health
             //alert(playerOne[0]+":"+playerOne[2]+" *ROUND "+round+" OVER* "+playerTwo[0]+":"+playerTwo[2]);
             fighter1_txt.innerHTML = fighters[0].name + ":   " + fighters[0].health;
-            fighter1_txt.innerHTML = fighters[1].name + ":   " + fighters[1].health;
+            fighter2_txt.innerHTML = fighters[1].name + ":   " + fighters[1].health;
             
         }else{
             //make alert with results
@@ -145,11 +145,11 @@
             button.removeEventListener("click", fight, false);
             
             //use query Selector to find element with class buttonblue
-            document.querySelector(".buttonble").innerHTML = "DONE!!!";
-        };
-    };
-};
-
+            document.querySelector(".buttonblue").innerHTML = "DONE!!!";
+        }
+    }
+        
+        
 //Create a function to check for a winner
 function winnerCheck(){
     //print in console log to confirm function is working
@@ -170,11 +170,11 @@ function winnerCheck(){
     //else if player's two health is less than one, player one wins
         //changed each variables to use the new Array items
     }else if(fighters[1].health <1){
-        results =fighters[0].name + " WINS!!!"
-    };
+        results = fighters[0].name + " WINS!!!"
+    }
     //return information(result) back to winnerCheck
     return results;
-};
+}
 
 //program starts
 console.log("program starts");
