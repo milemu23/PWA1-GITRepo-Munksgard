@@ -95,7 +95,6 @@
         //if the result's length is empty
         //fixed error: needs to be triple equals to compare
 		if(results.length === 0){
-            console.log("is this working?");
             //call no match
 			noMatch();
         //else call show matches with the results
@@ -125,7 +124,7 @@
 			title, 
 			url
         ; 
-			
+		
         console.log("What is the value of results.length?  " + results.length);
         
 		// loop through all the results search() function
@@ -135,7 +134,8 @@
 			// title of video ends with pipe
 			// pull the title's string using index numbers
 			titleEnd = results[i].indexOf('|');
-			title = results[i].subString(0, titleEnd);
+            //fixed error: no camel case is necessary for substring
+			title = results[i].substring(0, titleEnd);
 			
 			// pull the video url after the title
 			url = results[i].substring(results[i].indexOf('|')+1, results[i].length);
