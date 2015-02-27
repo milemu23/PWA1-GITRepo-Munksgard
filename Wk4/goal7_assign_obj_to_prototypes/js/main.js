@@ -34,6 +34,10 @@
         populateHTML(person.name,"r"+(i+1)+"c1");
         populateHTML(person.job,"r"+(i+1)+"c2");
         
+        people.push(person);
+        names.splice(personIndex,1);
+    }
+        
         //allow only one interval at a time
         clearInterval(interval);
 
@@ -50,7 +54,7 @@
     //run prototype update() function
         function runUpdate(){
             people.forEach(function(element){
-                console.log(element);
+               // console.log(element);
                 
             //update - the prototype methond in person.js
                 element.update();
