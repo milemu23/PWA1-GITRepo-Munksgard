@@ -8,16 +8,26 @@
 //February 27, 2015
 // OBJECTS.Person
 
+//self-executing function
+(function(){
 
-//add Person object to -- main.js needs it
+    //add Person object to -- main.js needs it
+    window.Person=Person;
 
-//create two variables = job = with 4 different jobs, actions = 3 different actions
+    //create two variables with all the Person instances = job = with     4 different jobs, actions = 3 different actions
+    Person.jobs = ["mechanic", "artist", "accountant", "nurse"];
+    Person.actions = ["sleeping", "eating", "working"];
 
-//Person Object - has name, passing from main.js
-//Person constructor is created
-//name -set in this constructor for the Person
-//randomly select action
-//randomly select job
+    //Person Object - has name, passing from main.js
+    //Person constructor is created
+    function Person(name, row){
+        console.log("Person Created: ", name);
+        
+        //name -set in this constructor for the Person
+        this.name = name;
+
+        //randomly select action
+        //randomly select job
 
 //pass row number into the constructor
 
